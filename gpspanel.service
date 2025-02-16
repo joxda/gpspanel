@@ -4,8 +4,8 @@ After=multi-user.target gpsd.socket
 
 [Service]
 Type=idle
-User=nobody
-ExecStart=/usr/bin/python3 /var/www/gpspanel/gpspanel.py
+User=tahti
+ExecStart=/usr/local/indiweb/venv/bin/python /var/www/gpspanel/gpspanel.py
 Restart=always
 RestartSec=10
 
