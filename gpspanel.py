@@ -22,6 +22,7 @@ from gps3 import gps3
 from gevent import monkey; monkey.patch_all()
 from flask import Flask, render_template
 from flask_socketio import SocketIO
+from flask_cors import CORS
 from PIL import Image, ImageDraw
 
 __author__ = 'Radek Kaczorek'
@@ -30,7 +31,8 @@ __license__ = 'GPL-3'
 __version__ = '2.1.0'
 
 app = Flask(__name__, static_folder='assets')
-socketio = SocketIO(app)
+CORS(app, resources={r"/*": {"origins": "https://tahti.local"}})
+socketio = SocketIO(app, cors_allowed_origins=["https://tahti.local"])
 thread = None
 
 
