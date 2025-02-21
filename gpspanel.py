@@ -242,6 +242,6 @@ if __name__ == '__main__':
 	data_stream = gps3.DataStream()
 
 	try:
-		socketio.run(app, host='0.0.0.0', port = 8625, debug=False)
+		socketio.run(app, host='127.0.0.1', port = 8625, debug=False)
 	except KeyboardInterrupt:
 		shut_down()
